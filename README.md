@@ -6,7 +6,7 @@
 
 * 用途：让不能看流媒体的VPS看上流媒体（前提：VPS中要有一个是能看流媒体的）。
 
-* 特性：脚本默认解锁`Netflix Hulu HBO`[等](https://github.com/online2311/sniproxy_install/blob/master/proxy-domains.txt)，如需增删流媒体域名请编辑文件`/etc/dnsmasq.d/custom_netflix.conf`和`/etc/sniproxy.conf`
+* 特性：脚本默认解锁`Netflix Hulu HBO`[等](https://github.com/online2311/sniproxy_install/blob/master/proxy-domains.txt)，如需增删流媒体域名请编辑文件`/etc/sniproxy.conf`
 
 * 脚本支持系统：CentOS6+, Debian8+, Ubuntu16+
     * CentOS6/7/8， Debian8/9/10, Ubuntu16/18 已测试成功
