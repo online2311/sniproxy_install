@@ -209,6 +209,7 @@ install_sniproxy(){
         download /etc/default/sniproxy https://raw.githubusercontent.com/online2311/sniproxy_install/master/sniproxy.default
     fi
     download /etc/sniproxy.conf https://raw.githubusercontent.com/online2311/sniproxy_install/master/sniproxy.conf
+    download /tmp/proxy-domains.txt https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt
     cp -rf /tmp/proxy-domains.txt /tmp/out-proxy-domains.txt
     sed -i -e 's/\./\\\./g' -e 's/^/    \.\*/' -e 's/$/\$ \*/' /tmp/out-proxy-domains.txt || (echo -e "[${red}Error:${plain}] Failed to configuration sniproxy." && exit 1)
     sed -i '/table {/r /tmp/out-proxy-domains.txt' /etc/sniproxy.conf || (echo -e "[${red}Error:${plain}] Failed to configuration sniproxy." && exit 1)
