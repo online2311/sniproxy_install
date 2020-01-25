@@ -206,9 +206,9 @@ install_sniproxy(){
         ./autogen.sh && dpkg-buildpackage
         error_detect_depends "dpkg -i --no-debsig ../sniproxy_*.deb"
         download /etc/init.d/sniproxy https://raw.githubusercontent.com/dlundquist/sniproxy/master/debian/init.d && chmod +x /etc/init.d/sniproxy
-        download /etc/default/sniproxy https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/sniproxy.default
+        download /etc/default/sniproxy https://raw.githubusercontent.com/online2311/sniproxy_install/master/sniproxy.default
     fi
-    download /etc/sniproxy.conf https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/sniproxy.conf
+    download /etc/sniproxy.conf https://raw.githubusercontent.com/online2311/sniproxy_install/master/sniproxy.conf
     cp -rf /tmp/proxy-domains.txt /tmp/out-proxy-domains.txt
     sed -i -e 's/\./\\\./g' -e 's/^/    \.\*/' -e 's/$/\$ \*/' /tmp/out-proxy-domains.txt || (echo -e "[${red}Error:${plain}] Failed to configuration sniproxy." && exit 1)
     sed -i '/table {/r /tmp/out-proxy-domains.txt' /etc/sniproxy.conf || (echo -e "[${red}Error:${plain}] Failed to configuration sniproxy." && exit 1)
